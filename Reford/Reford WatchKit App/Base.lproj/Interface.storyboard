@@ -76,6 +76,7 @@
                                     </group>
                                     <connections>
                                         <action selector="onHomeTapped" destination="JaL-iB-BpR" id="7DK-oL-GvZ"/>
+                                        <segue destination="Rxf-9t-Jx4" kind="push" identifier="homeSegue" id="zam-Nb-1Sw"/>
                                     </connections>
                                 </button>
                                 <label alignment="center" verticalAlignment="center" text=":" id="jBm-CO-b8p">
@@ -111,6 +112,7 @@
                                     </group>
                                     <connections>
                                         <action selector="onAwayTapped" destination="JaL-iB-BpR" id="SqV-eJ-skS"/>
+                                        <segue destination="Rxf-9t-Jx4" kind="push" identifier="awaySegue" id="eDH-MD-lzH"/>
                                     </connections>
                                 </button>
                             </items>
@@ -142,12 +144,353 @@
             </objects>
             <point key="canvasLocation" x="530" y="363"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Player Interface Controller-->
         <scene sceneID="ST7-vd-cez">
             <objects>
-                <controller hidesWhenLoading="NO" id="Rxf-9t-Jx4"/>
+                <controller hidesWhenLoading="NO" id="Rxf-9t-Jx4" customClass="PlayerInterfaceController" customModule="Reford_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="BCN" id="lRg-fs-E1O">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                            <variation key="device=watch42mm" text="FCB"/>
+                        </label>
+                        <picker width="1" height="100" alignment="left" id="ZVh-0y-slw">
+                            <connections>
+                                <action selector="onPickerChange:" destination="Rxf-9t-Jx4" id="mfl-Fg-9tQ"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Action" id="19E-MD-Cp0">
+                            <connections>
+                                <segue destination="7fn-Ro-0pR" kind="push" identifier="" id="rMB-bg-CfS"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="lRg-fs-E1O"/>
+                            <exclude reference="ZVh-0y-slw"/>
+                            <exclude reference="19E-MD-Cp0"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="lRg-fs-E1O"/>
+                            <include reference="ZVh-0y-slw"/>
+                            <include reference="19E-MD-Cp0"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="playerPicker" destination="ZVh-0y-slw" id="Smv-ST-WMX"/>
+                        <outlet property="teamLabel" destination="lRg-fs-E1O" id="61W-ud-fc6"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="737.53846153846155" y="362.23076923076928"/>
+            <point key="canvasLocation" x="748" y="362.23076923076928"/>
+        </scene>
+        <!--Action Interface Controller-->
+        <scene sceneID="6rQ-hc-jMD">
+            <objects>
+                <controller hidesWhenLoading="NO" id="7fn-Ro-0pR" customClass="ActionInterfaceController" customModule="Reford_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="9yM-Zd-Ij6">
+                            <items>
+                                <label alignment="left" text="Label" id="2Oz-K0-ZUH">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <variation key="device=watch42mm" text="FCB"/>
+                                </label>
+                                <label alignment="left" text="Label" id="PLa-gI-uMa">
+                                    <variation key="device=watch42mm" text="- 10 Messi"/>
+                                </label>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="2Oz-K0-ZUH"/>
+                                    <exclude reference="PLa-gI-uMa"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm">
+                                <mask key="items">
+                                    <include reference="2Oz-K0-ZUH"/>
+                                    <include reference="PLa-gI-uMa"/>
+                                </mask>
+                            </variation>
+                        </group>
+                        <button alignment="left" id="B65-Ae-CNc">
+                            <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="u4C-cJ-D4U">
+                                <items>
+                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="Hd5-YZ-b1v">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <label alignment="left" verticalAlignment="center" text="GOAL" id="mg1-iz-us9"/>
+                                </items>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.33626994680851063" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="items">
+                                        <exclude reference="Hd5-YZ-b1v"/>
+                                        <exclude reference="mg1-iz-us9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="device=watch42mm">
+                                    <mask key="items">
+                                        <include reference="Hd5-YZ-b1v"/>
+                                        <include reference="mg1-iz-us9"/>
+                                    </mask>
+                                </variation>
+                            </group>
+                            <connections>
+                                <segue destination="Ep8-Te-TR2" kind="push" id="kkh-V3-sD1"/>
+                            </connections>
+                        </button>
+                        <button alignment="left" id="0OC-GC-fEU">
+                            <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="IKv-CX-PfJ">
+                                <items>
+                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="ohF-4J-vnF">
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <label alignment="left" verticalAlignment="center" text="Yellow Card" id="5sY-aZ-1u1"/>
+                                </items>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.3362699468" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="items">
+                                        <exclude reference="ohF-4J-vnF"/>
+                                        <exclude reference="5sY-aZ-1u1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="device=watch42mm">
+                                    <mask key="items">
+                                        <include reference="ohF-4J-vnF"/>
+                                        <include reference="5sY-aZ-1u1"/>
+                                    </mask>
+                                </variation>
+                            </group>
+                            <connections>
+                                <segue destination="Ep8-Te-TR2" kind="push" id="758-he-adN"/>
+                            </connections>
+                        </button>
+                        <button alignment="left" id="be8-9m-bqY">
+                            <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="mzx-el-AFE">
+                                <items>
+                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="WeT-Yu-4MG">
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <label alignment="left" verticalAlignment="center" text="Red Card" id="X4y-Sa-nS0"/>
+                                </items>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.3362699468" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="items">
+                                        <exclude reference="WeT-Yu-4MG"/>
+                                        <exclude reference="X4y-Sa-nS0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="device=watch42mm">
+                                    <mask key="items">
+                                        <include reference="WeT-Yu-4MG"/>
+                                        <include reference="X4y-Sa-nS0"/>
+                                    </mask>
+                                </variation>
+                            </group>
+                            <connections>
+                                <segue destination="Ep8-Te-TR2" kind="push" id="OpL-v1-acM"/>
+                            </connections>
+                        </button>
+                        <button alignment="left" id="AWX-hs-RjB">
+                            <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="pqH-uN-22J">
+                                <items>
+                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="XLD-D2-OUA">
+                                        <color key="backgroundColor" red="0.0" green="0.73155268324607325" blue="0.0015157527546153173" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <label alignment="left" verticalAlignment="center" text="Hand Ball" id="cro-zK-UM4"/>
+                                </items>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.3362699468" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="items">
+                                        <exclude reference="XLD-D2-OUA"/>
+                                        <exclude reference="cro-zK-UM4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="device=watch42mm">
+                                    <mask key="items">
+                                        <include reference="XLD-D2-OUA"/>
+                                        <include reference="cro-zK-UM4"/>
+                                    </mask>
+                                </variation>
+                            </group>
+                            <connections>
+                                <segue destination="Ep8-Te-TR2" kind="push" identifier="handAction" id="Yym-If-6Dv"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="9yM-Zd-Ij6"/>
+                            <exclude reference="B65-Ae-CNc"/>
+                            <exclude reference="0OC-GC-fEU"/>
+                            <exclude reference="be8-9m-bqY"/>
+                            <exclude reference="AWX-hs-RjB"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="9yM-Zd-Ij6"/>
+                            <include reference="B65-Ae-CNc"/>
+                            <include reference="0OC-GC-fEU"/>
+                            <include reference="be8-9m-bqY"/>
+                            <include reference="AWX-hs-RjB"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="playerLabel" destination="PLa-gI-uMa" id="u5d-0D-RS7"/>
+                        <outlet property="teamLabel" destination="2Oz-K0-ZUH" id="3jW-X4-LZz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="962.46153846153857" y="362.23076923076928"/>
+        </scene>
+        <!--Confirm Interface Controller-->
+        <scene sceneID="s4h-rD-Vzi">
+            <objects>
+                <controller hidesWhenLoading="NO" id="Ep8-Te-TR2" customClass="ConfirmInterfaceController" customModule="Reford_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="30" id="vw6-tu-XC2">
+                            <items>
+                                <group width="1" alignment="left" layout="vertical" id="0bp-IM-mRp">
+                                    <items>
+                                        <label alignment="left" text="Label" id="yMi-PL-hQ5">
+                                            <variation key="device=watch42mm" text="FCB - 10 Messi"/>
+                                        </label>
+                                        <group width="1" height="40" alignment="left" spacing="10" id="WBG-C5-5ej">
+                                            <items>
+                                                <imageView width="0.29999999999999999" height="1" alignment="left" verticalAlignment="center" id="h9N-od-GcH"/>
+                                                <label alignment="left" verticalAlignment="center" text="GOAL" id="VpB-kn-CDm"/>
+                                            </items>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="0.3869126773460993" colorSpace="calibratedWhite"/>
+                                            <variation key="default">
+                                                <mask key="items">
+                                                    <exclude reference="h9N-od-GcH"/>
+                                                    <exclude reference="VpB-kn-CDm"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="device=watch42mm">
+                                                <mask key="items">
+                                                    <include reference="h9N-od-GcH"/>
+                                                    <include reference="VpB-kn-CDm"/>
+                                                </mask>
+                                            </variation>
+                                        </group>
+                                    </items>
+                                    <variation key="default">
+                                        <mask key="items">
+                                            <exclude reference="yMi-PL-hQ5"/>
+                                            <exclude reference="WBG-C5-5ej"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <mask key="items">
+                                            <include reference="yMi-PL-hQ5"/>
+                                            <include reference="WBG-C5-5ej"/>
+                                        </mask>
+                                    </variation>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" id="wOu-6h-VNd">
+                                    <items>
+                                        <button alignment="left" id="Wda-dR-MK6">
+                                            <group key="contentGroup" width="1" height="40" alignment="left" radius="15" id="r2J-qO-uhI">
+                                                <items>
+                                                    <label alignment="center" verticalAlignment="center" text="Label" id="QdK-JC-gAn">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                        <variation key="device=watch42mm" text="Cancel"/>
+                                                    </label>
+                                                </items>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.60776817375886527" colorSpace="calibratedWhite"/>
+                                                <variation key="default">
+                                                    <mask key="items">
+                                                        <exclude reference="QdK-JC-gAn"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="device=watch42mm">
+                                                    <mask key="items">
+                                                        <include reference="QdK-JC-gAn"/>
+                                                    </mask>
+                                                </variation>
+                                            </group>
+                                            <connections>
+                                                <action selector="onCancelTapped" destination="Ep8-Te-TR2" id="eip-wI-ljY"/>
+                                            </connections>
+                                        </button>
+                                        <button alignment="left" id="yfS-wF-o3u">
+                                            <group key="contentGroup" width="1" height="40" alignment="left" radius="15" id="TFr-bW-dm1">
+                                                <items>
+                                                    <label alignment="center" verticalAlignment="center" text="Label" id="qcQ-as-5ah">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                        <variation key="device=watch42mm" text="Confirm"/>
+                                                    </label>
+                                                </items>
+                                                <color key="backgroundColor" red="0.90588235294117647" green="0.082352941176470587" blue="0.35294117647058826" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="default">
+                                                    <mask key="items">
+                                                        <exclude reference="qcQ-as-5ah"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="device=watch42mm">
+                                                    <mask key="items">
+                                                        <include reference="qcQ-as-5ah"/>
+                                                    </mask>
+                                                </variation>
+                                            </group>
+                                            <connections>
+                                                <action selector="onConfirmTapepd" destination="Ep8-Te-TR2" id="crJ-xp-H42"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                    <variation key="default">
+                                        <mask key="items">
+                                            <exclude reference="Wda-dR-MK6"/>
+                                            <exclude reference="yfS-wF-o3u"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <mask key="items">
+                                            <include reference="Wda-dR-MK6"/>
+                                            <include reference="yfS-wF-o3u"/>
+                                        </mask>
+                                    </variation>
+                                </group>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="0bp-IM-mRp"/>
+                                    <exclude reference="wOu-6h-VNd"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm">
+                                <mask key="items">
+                                    <include reference="0bp-IM-mRp"/>
+                                    <include reference="wOu-6h-VNd"/>
+                                </mask>
+                            </variation>
+                        </group>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="vw6-tu-XC2"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="vw6-tu-XC2"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="confirmImage" destination="h9N-od-GcH" id="hIr-Ie-emy"/>
+                        <outlet property="confirmText" destination="VpB-kn-CDm" id="kWY-Kb-lFa"/>
+                        <outlet property="teamLabel" destination="yMi-PL-hQ5" id="xB4-cj-aqk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1168.2051282051282" y="362.23076923076928"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eDH-MD-lzH"/>
+        <segue reference="Yym-If-6Dv"/>
+    </inferredMetricsTieBreakers>
 </document>

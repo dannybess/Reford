@@ -36,4 +36,12 @@ class MatchInterfaceController: WKInterfaceController {
     @IBAction func onAwayTapped() {
         
     }
+    
+    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+        if segueIdentifier == "homeSegue" {
+            return "RMD"
+        } else {
+            return "FCB"
+        }
+    }
 }
