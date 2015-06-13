@@ -61,7 +61,7 @@ class PlayerInterfaceController: WKInterfaceController {
     }
 
     @IBAction func onPickerChange(value: Int) {
-        selectedPlayer = value
+        selectedPlayer = value + 1
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {

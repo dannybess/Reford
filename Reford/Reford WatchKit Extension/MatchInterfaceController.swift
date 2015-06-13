@@ -25,6 +25,9 @@ class MatchInterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(true, forKey: "isMatchStarted")
+        
         matchTimer.setDate(NSDate())
         matchTimer.start()
     }

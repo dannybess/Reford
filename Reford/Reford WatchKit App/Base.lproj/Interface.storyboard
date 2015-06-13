@@ -16,16 +16,17 @@
                                 <picker width="50" height="30" alignment="right" id="mIz-EI-KIN"/>
                             </items>
                         </group>
-                        <group width="1" height="100" alignment="left" verticalAlignment="center" radius="53" id="dME-nN-eYQ">
+                        <group width="1" height="86" alignment="left" verticalAlignment="center" radius="23" id="dME-nN-eYQ">
                             <items>
                                 <button width="1" height="1" alignment="left" verticalAlignment="center" title="Start Match" id="fEq-I8-Qn7">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                     <connections>
+                                        <action selector="onStartTapped" destination="AgC-eL-Hgc" id="WFr-fo-6Wg"/>
                                         <segue destination="JaL-iB-BpR" kind="push" id="H17-FJ-kqZ"/>
                                     </connections>
                                 </button>
                             </items>
-                            <color key="backgroundColor" red="1" green="0.31835373989999999" blue="0.47047373720000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.13679224914771393" blue="0.55114843544391068" alpha="1" colorSpace="calibratedRGB"/>
                         </group>
                     </items>
                     <connections>
@@ -35,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="305" y="363"/>
         </scene>
-        <!--Match Interface Controller-->
+        <!--matchInterface-->
         <scene sceneID="nyk-kR-Hfz">
             <objects>
-                <controller hidesWhenLoading="NO" id="JaL-iB-BpR" customClass="MatchInterfaceController" customModule="Reford_WatchKit_Extension">
+                <controller identifier="matchInterface" hidesWhenLoading="NO" id="JaL-iB-BpR" customClass="MatchInterfaceController" customModule="Reford_WatchKit_Extension">
                     <items>
                         <label alignment="center" text="First Half" id="qub-JC-dee"/>
                         <timer alignment="center" id="Mpy-UY-Ua4">
@@ -217,99 +218,79 @@
                         <button alignment="left" id="B65-Ae-CNc">
                             <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="u4C-cJ-D4U">
                                 <items>
-                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="Hd5-YZ-b1v">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </group>
-                                    <label alignment="left" verticalAlignment="center" text="GOAL" id="mg1-iz-us9"/>
+                                    <label height="30" alignment="center" verticalAlignment="center" text="GOAL" id="isl-YG-No6"/>
                                 </items>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.33626994680851063" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.76981757198952883" green="0.76981757198952883" blue="0.76981757198952883" alpha="0.33626994680851063" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="items">
-                                        <exclude reference="Hd5-YZ-b1v"/>
-                                        <exclude reference="mg1-iz-us9"/>
+                                        <exclude reference="isl-YG-No6"/>
                                     </mask>
                                 </variation>
                                 <variation key="device=watch42mm">
                                     <mask key="items">
-                                        <include reference="Hd5-YZ-b1v"/>
-                                        <include reference="mg1-iz-us9"/>
+                                        <include reference="isl-YG-No6"/>
                                     </mask>
                                 </variation>
                             </group>
                             <connections>
-                                <segue destination="Ep8-Te-TR2" kind="push" id="kkh-V3-sD1"/>
+                                <segue destination="Ep8-Te-TR2" kind="push" identifier="goalAction" id="kkh-V3-sD1"/>
                             </connections>
                         </button>
                         <button alignment="left" id="0OC-GC-fEU">
                             <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="IKv-CX-PfJ">
                                 <items>
-                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="ohF-4J-vnF">
-                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </group>
-                                    <label alignment="left" verticalAlignment="center" text="Yellow Card" id="5sY-aZ-1u1"/>
+                                    <label height="30" alignment="center" verticalAlignment="center" text="Yellow Card" id="5sY-aZ-1u1"/>
                                 </items>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.3362699468" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.89925556282722519" green="0.89739233530079421" blue="0.0" alpha="0.74493018617021278" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="items">
-                                        <exclude reference="ohF-4J-vnF"/>
                                         <exclude reference="5sY-aZ-1u1"/>
                                     </mask>
                                 </variation>
                                 <variation key="device=watch42mm">
                                     <mask key="items">
-                                        <include reference="ohF-4J-vnF"/>
                                         <include reference="5sY-aZ-1u1"/>
                                     </mask>
                                 </variation>
                             </group>
                             <connections>
-                                <segue destination="Ep8-Te-TR2" kind="push" id="758-he-adN"/>
+                                <segue destination="Ep8-Te-TR2" kind="push" identifier="yellowAction" id="758-he-adN"/>
                             </connections>
                         </button>
                         <button alignment="left" id="be8-9m-bqY">
-                            <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="mzx-el-AFE">
+                            <group key="contentGroup" width="1" height="30" alignment="left" radius="10" spacing="10" id="mzx-el-AFE">
                                 <items>
-                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="WeT-Yu-4MG">
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </group>
-                                    <label alignment="left" verticalAlignment="center" text="Red Card" id="X4y-Sa-nS0"/>
+                                    <label alignment="center" verticalAlignment="center" text="Red Card" id="X4y-Sa-nS0"/>
                                 </items>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.3362699468" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.76148016821027431" green="0.11374365547846539" blue="0.10506925902533121" alpha="0.78698470743829796" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="items">
-                                        <exclude reference="WeT-Yu-4MG"/>
                                         <exclude reference="X4y-Sa-nS0"/>
                                     </mask>
                                 </variation>
                                 <variation key="device=watch42mm">
                                     <mask key="items">
-                                        <include reference="WeT-Yu-4MG"/>
                                         <include reference="X4y-Sa-nS0"/>
                                     </mask>
                                 </variation>
                             </group>
                             <connections>
-                                <segue destination="Ep8-Te-TR2" kind="push" id="OpL-v1-acM"/>
+                                <segue destination="Ep8-Te-TR2" kind="push" identifier="redAction" id="OpL-v1-acM"/>
                             </connections>
                         </button>
                         <button alignment="left" id="AWX-hs-RjB">
                             <group key="contentGroup" width="1" alignment="left" radius="10" spacing="10" id="pqH-uN-22J">
                                 <items>
-                                    <group width="30" height="30" alignment="left" verticalAlignment="center" radius="30" id="XLD-D2-OUA">
-                                        <color key="backgroundColor" red="0.0" green="0.73155268324607325" blue="0.0015157527546153173" alpha="1" colorSpace="calibratedRGB"/>
-                                    </group>
-                                    <label alignment="left" verticalAlignment="center" text="Hand Ball" id="cro-zK-UM4"/>
+                                    <label height="30" alignment="center" verticalAlignment="center" text="Hand Ball" id="cro-zK-UM4"/>
                                 </items>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.3362699468" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.60123527482303663" blue="0.0012457394318357955" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="items">
-                                        <exclude reference="XLD-D2-OUA"/>
                                         <exclude reference="cro-zK-UM4"/>
                                     </mask>
                                 </variation>
                                 <variation key="device=watch42mm">
                                     <mask key="items">
-                                        <include reference="XLD-D2-OUA"/>
                                         <include reference="cro-zK-UM4"/>
                                     </mask>
                                 </variation>
@@ -350,16 +331,16 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="Ep8-Te-TR2" customClass="ConfirmInterfaceController" customModule="Reford_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" layout="vertical" spacing="30" id="vw6-tu-XC2">
+                        <group width="1" alignment="left" layout="vertical" spacing="15" id="vw6-tu-XC2">
                             <items>
                                 <group width="1" alignment="left" layout="vertical" id="0bp-IM-mRp">
                                     <items>
                                         <label alignment="left" text="Label" id="yMi-PL-hQ5">
                                             <variation key="device=watch42mm" text="FCB - 10 Messi"/>
                                         </label>
-                                        <group width="1" height="40" alignment="left" spacing="10" id="WBG-C5-5ej">
+                                        <group width="1" height="40" alignment="left" radius="15" spacing="10" id="WBG-C5-5ej">
                                             <items>
-                                                <imageView width="0.29999999999999999" height="1" alignment="left" verticalAlignment="center" id="h9N-od-GcH"/>
+                                                <imageView width="0.29999999999999999" height="1" alignment="left" verticalAlignment="center" contentMode="center" id="h9N-od-GcH"/>
                                                 <label alignment="left" verticalAlignment="center" text="GOAL" id="VpB-kn-CDm"/>
                                             </items>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="0.3869126773460993" colorSpace="calibratedWhite"/>
@@ -486,11 +467,11 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1168.2051282051282" y="362.23076923076928"/>
+            <point key="canvasLocation" x="747.1282051282052" y="740.58974358974365"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eDH-MD-lzH"/>
         <segue reference="Yym-If-6Dv"/>
+        <segue reference="eDH-MD-lzH"/>
     </inferredMetricsTieBreakers>
 </document>

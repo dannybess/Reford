@@ -20,6 +20,17 @@ class InterfaceController: WKInterfaceController {
         picker.setItems(setupPicker())
     }
     
+    override func willActivate() {
+        super.willActivate()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let started: Bool = defaults.boolForKey("isMatchStarted")
+        
+        if started {
+            self.pushControllerWithName("matchIdentifier", context: nil)
+        }
+    }
+    
     func setupPicker() -> [WKPickerItem] {
         var pickerArray:[WKPickerItem] = []
         
@@ -30,5 +41,10 @@ class InterfaceController: WKInterfaceController {
         }
         
         return pickerArray
+    }
+    
+    @IBAction func onStartTapped() {
+        // initialize singleton
+        _ = MatchModel.instance
     }
 }

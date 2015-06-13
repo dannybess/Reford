@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C526E911B2CD8C800582E87 /* ConfirmInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C526E901B2CD8C800582E87 /* ConfirmInterfaceController.swift */; };
+		1C526E941B2CE8EE00582E87 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C526E931B2CE8EE00582E87 /* MatchModel.swift */; };
 		1CFEC7851B2CAB370080B035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7841B2CAB370080B035 /* AppDelegate.swift */; };
 		1CFEC7871B2CAB370080B035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7861B2CAB370080B035 /* ViewController.swift */; };
 		1CFEC78A1B2CAB370080B035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFEC7881B2CAB370080B035 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		1C526E901B2CD8C800582E87 /* ConfirmInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmInterfaceController.swift; sourceTree = "<group>"; };
+		1C526E931B2CE8EE00582E87 /* MatchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		1CFEC7811B2CAB370080B035 /* Reford.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reford.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFEC7841B2CAB370080B035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CFEC7861B2CAB370080B035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C526E921B2CE8D400582E87 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1C526E931B2CE8EE00582E87 /* MatchModel.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		1CFEC7781B2CAB370080B035 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		1CFEC7A61B2CAB370080B035 /* Reford WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1C526E921B2CE8D400582E87 /* model */,
 				1CFEC7BB1B2CAEEF0080B035 /* InterfaceControllers */,
 				1CFEC7A91B2CAB370080B035 /* ExtensionDelegate.swift */,
 				1CFEC7AB1B2CAB370080B035 /* Assets.xcassets */,
@@ -315,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CFEC7BF1B2CC1F60080B035 /* PlayerInterfaceController.swift in Sources */,
+				1C526E941B2CE8EE00582E87 /* MatchModel.swift in Sources */,
 				1CFEC7C11B2CCB060080B035 /* ActionInterfaceController.swift in Sources */,
 				1CFEC7BD1B2CBA230080B035 /* MatchInterfaceController.swift in Sources */,
 				1CFEC7AA1B2CAB370080B035 /* ExtensionDelegate.swift in Sources */,

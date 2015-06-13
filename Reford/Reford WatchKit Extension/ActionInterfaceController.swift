@@ -24,7 +24,7 @@ class ActionInterfaceController: WKInterfaceController {
             playerLabel.setText("- \(name[0])")
             teamLabel.setText(name[1])
             
-            titleText = "\(name[1]) - \(name[0]))"
+            titleText = "\(name[1]) - \(name[0])"
         }
     }
 
@@ -39,17 +39,17 @@ class ActionInterfaceController: WKInterfaceController {
     }
 
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        switch segueIdentifier {
-        case "goalAction":
+        if segueIdentifier == "goalAction" {
             return ["0",titleText]
-        case "yellowAction":
+        }
+        else if segueIdentifier == "yellowAction" {
             return ["1",titleText]
-        case "redAction":
+        }
+        else if segueIdentifier == "redAction" {
             return ["2",titleText]
-        case "handAction":
+        }
+        else {
             return ["3",titleText]
-        default:
-            return -1
         }
     }
 }
