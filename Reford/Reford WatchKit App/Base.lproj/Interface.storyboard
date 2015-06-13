@@ -10,140 +10,185 @@
             <objects>
                 <controller spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Reford_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="MXG-yd-fXk">
+                        <group width="1" alignment="left" layout="vertical" id="J7j-ni-32C" userLabel="startMatch">
                             <items>
-                                <label alignment="left" verticalAlignment="center" text="Match ID:" id="X3b-Tu-w8U"/>
-                                <picker width="50" height="30" alignment="right" id="mIz-EI-KIN"/>
-                            </items>
-                        </group>
-                        <group width="1" height="86" alignment="left" verticalAlignment="center" radius="23" id="dME-nN-eYQ">
-                            <items>
-                                <button width="1" height="1" alignment="left" verticalAlignment="center" title="Start Match" id="fEq-I8-Qn7">
-                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                    <connections>
-                                        <action selector="onStartTapped" destination="AgC-eL-Hgc" id="WFr-fo-6Wg"/>
-                                        <segue destination="JaL-iB-BpR" kind="push" id="H17-FJ-kqZ"/>
-                                    </connections>
-                                </button>
-                            </items>
-                            <color key="backgroundColor" red="1" green="0.13679224914771393" blue="0.55114843544391068" alpha="1" colorSpace="calibratedRGB"/>
-                        </group>
-                    </items>
-                    <connections>
-                        <outlet property="picker" destination="mIz-EI-KIN" id="Evt-JJ-KBp"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="305" y="363"/>
-        </scene>
-        <!--matchInterface-->
-        <scene sceneID="nyk-kR-Hfz">
-            <objects>
-                <controller identifier="matchInterface" hidesWhenLoading="NO" id="JaL-iB-BpR" customClass="MatchInterfaceController" customModule="Reford_WatchKit_Extension">
-                    <items>
-                        <label alignment="center" text="First Half" id="qub-JC-dee"/>
-                        <timer alignment="center" id="Mpy-UY-Ua4">
-                            <calendarUnit key="units" minute="YES" second="YES"/>
-                        </timer>
-                        <group width="1" alignment="left" id="2Nb-bC-dqN">
-                            <items>
-                                <button alignment="left" id="Bwk-hD-ahz">
-                                    <group key="contentGroup" width="0.40000000000000002" alignment="left" layout="vertical" id="fys-rJ-5Tp">
-                                        <items>
-                                            <group width="50" height="50" alignment="left" id="hnz-jL-j1k">
-                                                <items>
-                                                    <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="N8z-d8-aXg">
-                                                        <variation key="device=watch42mm" text="2"/>
-                                                    </label>
-                                                </items>
-                                                <color key="backgroundColor" red="0.0" green="0.052975194323212627" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </group>
-                                            <label alignment="left" text="Home" id="fqa-hh-xub">
-                                                <variation key="device=watch42mm" text="Madrid"/>
-                                            </label>
-                                        </items>
-                                        <variation key="default">
-                                            <mask key="items">
-                                                <exclude reference="hnz-jL-j1k"/>
-                                                <exclude reference="fqa-hh-xub"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="device=watch42mm">
-                                            <mask key="items">
-                                                <include reference="hnz-jL-j1k"/>
-                                                <include reference="fqa-hh-xub"/>
-                                            </mask>
-                                        </variation>
-                                    </group>
-                                    <connections>
-                                        <action selector="onHomeTapped" destination="JaL-iB-BpR" id="7DK-oL-GvZ"/>
-                                        <segue destination="Rxf-9t-Jx4" kind="push" identifier="homeSegue" id="zam-Nb-1Sw"/>
-                                    </connections>
-                                </button>
-                                <label alignment="center" verticalAlignment="center" text=":" id="jBm-CO-b8p">
-                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                </label>
-                                <button alignment="right" id="GXn-Ox-cDx">
-                                    <group key="contentGroup" width="0.40000000000000002" alignment="left" layout="vertical" id="Wsa-3l-chp">
-                                        <items>
-                                            <group width="50" height="50" alignment="right" id="ph1-qm-a4g">
-                                                <items>
-                                                    <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="9vq-RY-zm1">
-                                                        <variation key="device=watch42mm" text="1"/>
-                                                    </label>
-                                                </items>
-                                                <color key="backgroundColor" red="1" green="0.49320493932263298" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </group>
-                                            <label alignment="right" text="Away" textAlignment="right" id="rhC-qP-Tqz">
-                                                <variation key="device=watch42mm" text="Barca"/>
-                                            </label>
-                                        </items>
-                                        <variation key="default">
-                                            <mask key="items">
-                                                <exclude reference="ph1-qm-a4g"/>
-                                                <exclude reference="rhC-qP-Tqz"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="device=watch42mm">
-                                            <mask key="items">
-                                                <include reference="ph1-qm-a4g"/>
-                                                <include reference="rhC-qP-Tqz"/>
-                                            </mask>
-                                        </variation>
-                                    </group>
-                                    <connections>
-                                        <action selector="onAwayTapped" destination="JaL-iB-BpR" id="SqV-eJ-skS"/>
-                                        <segue destination="Rxf-9t-Jx4" kind="push" identifier="awaySegue" id="eDH-MD-lzH"/>
-                                    </connections>
-                                </button>
+                                <group width="1" alignment="left" id="MXG-yd-fXk">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="center" text="Match ID:" id="X3b-Tu-w8U"/>
+                                        <picker width="50" height="30" alignment="right" id="mIz-EI-KIN"/>
+                                    </items>
+                                </group>
+                                <group width="1" height="86" alignment="left" verticalAlignment="center" radius="23" id="dME-nN-eYQ">
+                                    <items>
+                                        <button width="1" height="1" alignment="left" verticalAlignment="center" title="Start Match" id="fEq-I8-Qn7">
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            <connections>
+                                                <action selector="onStartTapped" destination="AgC-eL-Hgc" id="WFr-fo-6Wg"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                    <color key="backgroundColor" red="1" green="0.13679224914771393" blue="0.55114843544391068" alpha="1" colorSpace="calibratedRGB"/>
+                                </group>
                             </items>
                             <variation key="default">
                                 <mask key="items">
-                                    <exclude reference="Bwk-hD-ahz"/>
-                                    <exclude reference="jBm-CO-b8p"/>
-                                    <exclude reference="GXn-Ox-cDx"/>
+                                    <exclude reference="MXG-yd-fXk"/>
+                                    <exclude reference="dME-nN-eYQ"/>
                                 </mask>
                             </variation>
                             <variation key="device=watch42mm">
                                 <mask key="items">
-                                    <include reference="Bwk-hD-ahz"/>
-                                    <include reference="jBm-CO-b8p"/>
-                                    <include reference="GXn-Ox-cDx"/>
+                                    <include reference="MXG-yd-fXk"/>
+                                    <include reference="dME-nN-eYQ"/>
+                                </mask>
+                            </variation>
+                        </group>
+                        <group width="1" alignment="left" id="Voz-Yy-fBw" userLabel="match">
+                            <items>
+                                <group width="1" alignment="left" layout="vertical" id="Auj-Rk-2nE">
+                                    <items>
+                                        <label alignment="center" text="First Half" id="qub-JC-dee"/>
+                                        <timer alignment="center" id="Mpy-UY-Ua4">
+                                            <calendarUnit key="units" minute="YES" second="YES"/>
+                                        </timer>
+                                        <group width="1" alignment="left" id="2Nb-bC-dqN">
+                                            <items>
+                                                <button alignment="left" id="Bwk-hD-ahz">
+                                                    <group key="contentGroup" width="0.40000000000000002" alignment="left" layout="vertical" id="fys-rJ-5Tp">
+                                                        <items>
+                                                            <group width="50" height="50" alignment="left" id="hnz-jL-j1k">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="N8z-d8-aXg">
+                                                                        <variation key="device=watch42mm" text="0"/>
+                                                                    </label>
+                                                                </items>
+                                                                <color key="backgroundColor" red="0.0" green="0.052975194323212627" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </group>
+                                                            <label alignment="left" text="Home" id="fqa-hh-xub">
+                                                                <variation key="device=watch42mm" text="FCB"/>
+                                                            </label>
+                                                        </items>
+                                                        <variation key="default">
+                                                            <mask key="items">
+                                                                <exclude reference="hnz-jL-j1k"/>
+                                                                <exclude reference="fqa-hh-xub"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="device=watch42mm">
+                                                            <mask key="items">
+                                                                <include reference="hnz-jL-j1k"/>
+                                                                <include reference="fqa-hh-xub"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </group>
+                                                    <connections>
+                                                        <segue destination="Rxf-9t-Jx4" kind="push" identifier="homeSegue" id="zam-Nb-1Sw"/>
+                                                    </connections>
+                                                </button>
+                                                <label alignment="center" verticalAlignment="center" text=":" id="jBm-CO-b8p">
+                                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                </label>
+                                                <button alignment="right" id="GXn-Ox-cDx">
+                                                    <group key="contentGroup" width="0.40000000000000002" alignment="left" layout="vertical" id="Wsa-3l-chp">
+                                                        <items>
+                                                            <group width="50" height="50" alignment="right" id="ph1-qm-a4g">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="9vq-RY-zm1">
+                                                                        <variation key="device=watch42mm" text="0"/>
+                                                                    </label>
+                                                                </items>
+                                                                <color key="backgroundColor" red="1" green="0.49320493932263298" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </group>
+                                                            <label alignment="right" text="Away" textAlignment="right" id="rhC-qP-Tqz">
+                                                                <variation key="device=watch42mm" text="RMD"/>
+                                                            </label>
+                                                        </items>
+                                                        <variation key="default">
+                                                            <mask key="items">
+                                                                <exclude reference="ph1-qm-a4g"/>
+                                                                <exclude reference="rhC-qP-Tqz"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="device=watch42mm">
+                                                            <mask key="items">
+                                                                <include reference="ph1-qm-a4g"/>
+                                                                <include reference="rhC-qP-Tqz"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </group>
+                                                    <connections>
+                                                        <segue destination="Rxf-9t-Jx4" kind="push" identifier="awaySegue" id="eDH-MD-lzH"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                            <variation key="default">
+                                                <mask key="items">
+                                                    <exclude reference="Bwk-hD-ahz"/>
+                                                    <exclude reference="jBm-CO-b8p"/>
+                                                    <exclude reference="GXn-Ox-cDx"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="device=watch42mm">
+                                                <mask key="items">
+                                                    <include reference="Bwk-hD-ahz"/>
+                                                    <include reference="jBm-CO-b8p"/>
+                                                    <include reference="GXn-Ox-cDx"/>
+                                                </mask>
+                                            </variation>
+                                        </group>
+                                    </items>
+                                    <variation key="default">
+                                        <mask key="items">
+                                            <exclude reference="qub-JC-dee"/>
+                                            <exclude reference="Mpy-UY-Ua4"/>
+                                            <exclude reference="2Nb-bC-dqN"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <mask key="items">
+                                            <include reference="qub-JC-dee"/>
+                                            <include reference="Mpy-UY-Ua4"/>
+                                            <include reference="2Nb-bC-dqN"/>
+                                        </mask>
+                                    </variation>
+                                </group>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="Auj-Rk-2nE"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm">
+                                <mask key="items">
+                                    <include reference="Auj-Rk-2nE"/>
                                 </mask>
                             </variation>
                         </group>
                     </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="J7j-ni-32C"/>
+                            <exclude reference="Voz-Yy-fBw"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="J7j-ni-32C"/>
+                            <include reference="Voz-Yy-fBw"/>
+                        </mask>
+                    </variation>
                     <connections>
-                        <outlet property="awayNameLabel" destination="rhC-qP-Tqz" id="ATh-pV-tYR"/>
-                        <outlet property="awayScoreLabel" destination="9vq-RY-zm1" id="qj8-Q2-6Uq"/>
-                        <outlet property="halfLabel" destination="qub-JC-dee" id="69t-3m-aAi"/>
-                        <outlet property="homeNameLabel" destination="fqa-hh-xub" id="ove-n1-UKD"/>
-                        <outlet property="homeScoreLabel" destination="N8z-d8-aXg" id="iWf-bJ-q0p"/>
-                        <outlet property="matchTimer" destination="Mpy-UY-Ua4" id="hiq-e5-ZPw"/>
+                        <outlet property="awayGoal" destination="9vq-RY-zm1" id="aek-e1-ivO"/>
+                        <outlet property="halfLabel" destination="qub-JC-dee" id="4Ud-EW-529"/>
+                        <outlet property="homeGoal" destination="N8z-d8-aXg" id="CGO-D0-vbP"/>
+                        <outlet property="matchGroup" destination="Voz-Yy-fBw" id="BCD-4i-iSv"/>
+                        <outlet property="picker" destination="mIz-EI-KIN" id="Evt-JJ-KBp"/>
+                        <outlet property="startMatchGroup" destination="J7j-ni-32C" id="q6J-lV-7H5"/>
+                        <outlet property="timerLabel" destination="Mpy-UY-Ua4" id="lt4-gn-oNj"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="530" y="363"/>
+            <point key="canvasLocation" x="469.89743589743591" y="362.23076923076928"/>
         </scene>
         <!--Player Interface Controller-->
         <scene sceneID="ST7-vd-cez">
@@ -471,7 +516,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="zam-Nb-1Sw"/>
         <segue reference="Yym-If-6Dv"/>
-        <segue reference="eDH-MD-lzH"/>
     </inferredMetricsTieBreakers>
 </document>

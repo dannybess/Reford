@@ -14,21 +14,41 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet var picker: WKInterfacePicker!
   
+    @IBOutlet var startMatchGroup: WKInterfaceGroup!
+    @IBOutlet var matchGroup: WKInterfaceGroup!
+    
+    @IBOutlet var halfLabel: WKInterfaceLabel!
+    @IBOutlet var timerLabel: WKInterfaceTimer!
+    
+    @IBOutlet var homeGoal: WKInterfaceLabel!
+    @IBOutlet var awayGoal: WKInterfaceLabel!
+    
+    var isMatchStarted: Bool = false
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         picker.setItems(setupPicker())
+        
+        timerLabel.setDate(NSDate())
+        timerLabel.start()
     }
     
     override func willActivate() {
         super.willActivate()
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let started: Bool = defaults.boolForKey("isMatchStarted")
-        
-        if started {
-            self.pushControllerWithName("matchIdentifier", context: nil)
+        if isMatchStarted {
+            startMatchGroup.setHidden(true)
+            startMatchGroup.setRelativeHeight(0, withAdjustment: 0)
+            matchGroup.setHidden(false)
+            matchGroup.setRelativeHeight(1, withAdjustment: 0)
+        } else {
+            startMatchGroup.setHidden(false)
+            startMatchGroup.setRelativeHeight(1, withAdjustment: 0)
+            matchGroup.setHidden(true)
+            matchGroup.setRelativeHeight(0, withAdjustment: 0)
         }
+
     }
     
     func setupPicker() -> [WKPickerItem] {
@@ -44,7 +64,53 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func onStartTapped() {
-        // initialize singleton
-        _ = MatchModel.instance
+        
+        isMatchStarted = true
+        
+        let animationTime: NSTimeInterval = 1.0
+        
+        animateWithDuration(animationTime) { () -> Void in
+            self.startMatchGroup.setRelativeHeight(0, withAdjustment: 0)
+//            self.startMatchGroup.setHidden(true)
+            
+            self.matchGroup.setRelativeHeight(1, withAdjustment: 0)
+            self.matchGroup.setHidden(false)
+        }
     }
+    
+    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+        if segueIdentifier == "homeSegue" {
+            return "RMD"
+        } else {
+            return "FCB"
+        }
+    }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

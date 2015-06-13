@@ -55,9 +55,10 @@ class ConfirmInterfaceController: WKInterfaceController {
 
     @IBAction func onCancelTapped() {
         self.popController()
+
     }
     
     @IBAction func onConfirmTapepd() {
-//        self.popToRootController()
+        self.popToRootController()
     }
 }
