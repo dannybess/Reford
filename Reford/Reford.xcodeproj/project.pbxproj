@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1C526E911B2CD8C800582E87 /* ConfirmInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C526E901B2CD8C800582E87 /* ConfirmInterfaceController.swift */; };
 		1CFEC7851B2CAB370080B035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7841B2CAB370080B035 /* AppDelegate.swift */; };
-		1CFEC7871B2CAB370080B035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7861B2CAB370080B035 /* ViewController.swift */; };
 		1CFEC78A1B2CAB370080B035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFEC7881B2CAB370080B035 /* Main.storyboard */; };
 		1CFEC78C1B2CAB370080B035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFEC78B1B2CAB370080B035 /* Assets.xcassets */; };
 		1CFEC78F1B2CAB370080B035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFEC78D1B2CAB370080B035 /* LaunchScreen.storyboard */; };
@@ -21,8 +20,15 @@
 		1CFEC7AA1B2CAB370080B035 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7A91B2CAB370080B035 /* ExtensionDelegate.swift */; };
 		1CFEC7AC1B2CAB370080B035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFEC7AB1B2CAB370080B035 /* Assets.xcassets */; };
 		1CFEC7BD1B2CBA230080B035 /* MatchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7BC1B2CBA230080B035 /* MatchInterfaceController.swift */; };
+<<<<<<< Updated upstream
 		1CFEC7BF1B2CC1F60080B035 /* PlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7BE1B2CC1F60080B035 /* PlayerInterfaceController.swift */; };
 		1CFEC7C11B2CCB060080B035 /* ActionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFEC7C01B2CCB060080B035 /* ActionInterfaceController.swift */; };
+=======
+		9D8414971B2CC4D60024416F /* Team1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8414961B2CC4D60024416F /* Team1ViewController.swift */; };
+		9D8414991B2CC4E80024416F /* Team2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8414981B2CC4E80024416F /* Team2ViewController.swift */; };
+		9D84149B1B2CC7D90024416F /* WatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84149A1B2CC7D90024416F /* WatchInfo.swift */; };
+		9D84149D1B2CDCE50024416F /* UITabBarController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84149C1B2CDCE50024416F /* UITabBarController1.swift */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +77,6 @@
 		1C526E901B2CD8C800582E87 /* ConfirmInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmInterfaceController.swift; sourceTree = "<group>"; };
 		1CFEC7811B2CAB370080B035 /* Reford.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reford.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFEC7841B2CAB370080B035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1CFEC7861B2CAB370080B035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1CFEC7891B2CAB370080B035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CFEC78B1B2CAB370080B035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CFEC78E1B2CAB370080B035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,8 +91,15 @@
 		1CFEC7AB1B2CAB370080B035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CFEC7AD1B2CAB370080B035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CFEC7BC1B2CBA230080B035 /* MatchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchInterfaceController.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		1CFEC7BE1B2CC1F60080B035 /* PlayerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterfaceController.swift; sourceTree = "<group>"; };
 		1CFEC7C01B2CCB060080B035 /* ActionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionInterfaceController.swift; sourceTree = "<group>"; };
+=======
+		9D8414961B2CC4D60024416F /* Team1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team1ViewController.swift; sourceTree = "<group>"; };
+		9D8414981B2CC4E80024416F /* Team2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team2ViewController.swift; sourceTree = "<group>"; };
+		9D84149A1B2CC7D90024416F /* WatchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchInfo.swift; sourceTree = "<group>"; };
+		9D84149C1B2CDCE50024416F /* UITabBarController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarController1.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				1CFEC7841B2CAB370080B035 /* AppDelegate.swift */,
-				1CFEC7861B2CAB370080B035 /* ViewController.swift */,
+				9D84149C1B2CDCE50024416F /* UITabBarController1.swift */,
+				9D8414961B2CC4D60024416F /* Team1ViewController.swift */,
+				9D8414981B2CC4E80024416F /* Team2ViewController.swift */,
+				9D84149A1B2CC7D90024416F /* WatchInfo.swift */,
 				1CFEC7881B2CAB370080B035 /* Main.storyboard */,
 				1CFEC78B1B2CAB370080B035 /* Assets.xcassets */,
 				1CFEC78D1B2CAB370080B035 /* LaunchScreen.storyboard */,
@@ -305,7 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CFEC7871B2CAB370080B035 /* ViewController.swift in Sources */,
+				9D8414991B2CC4E80024416F /* Team2ViewController.swift in Sources */,
+				9D84149B1B2CC7D90024416F /* WatchInfo.swift in Sources */,
+				9D8414971B2CC4D60024416F /* Team1ViewController.swift in Sources */,
+				9D84149D1B2CDCE50024416F /* UITabBarController1.swift in Sources */,
 				1CFEC7851B2CAB370080B035 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
