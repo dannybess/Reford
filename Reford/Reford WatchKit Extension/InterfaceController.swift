@@ -29,13 +29,16 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         picker.setItems(setupPicker())
-        
-        timerLabel.setDate(NSDate())
-        timerLabel.start()
     }
     
     override func willActivate() {
         super.willActivate()
+        
+        let x = WKExtension.sharedExtension().delegate as? ExtensionDelegate
+        
+        homeGoal.setText("\(x!.homeScore)")
+        awayGoal.setText("\(x!.awayScore)")
+        
         
         if isMatchStarted {
             startMatchGroup.setHidden(true)
@@ -65,6 +68,9 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func onStartTapped() {
         
+        timerLabel.setDate(NSDate())
+        timerLabel.start()
+        
         isMatchStarted = true
         
         let animationTime: NSTimeInterval = 1.0
@@ -80,9 +86,9 @@ class InterfaceController: WKInterfaceController {
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
         if segueIdentifier == "homeSegue" {
-            return "RMD"
-        } else {
             return "FCB"
+        } else {
+            return "RMD"
         }
     }
     

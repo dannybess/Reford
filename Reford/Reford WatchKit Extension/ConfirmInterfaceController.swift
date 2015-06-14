@@ -16,12 +16,16 @@ class ConfirmInterfaceController: WKInterfaceController {
     @IBOutlet var confirmImage: WKInterfaceImage!
     @IBOutlet var confirmText: WKInterfaceLabel!
     
+    var teamName: String = ""
+    var isGoal: Bool = false
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         if let data = context as? [String] {
             teamLabel.setText(data[1])
             setupConfirmStuff(data[0])
+            teamName = data[2]
         }
     }
 
@@ -31,13 +35,18 @@ class ConfirmInterfaceController: WKInterfaceController {
         
         switch action {
         case "0":
+            isGoal = true
             confirmText.setText("GOAL")
+            return
         case "1":
             confirmText.setText("Yellow Card")
+            return
         case "2":
             confirmText.setText("Red Card")
+            return
         case "3":
             confirmText.setText("Hand Ball")
+            return
         default:
             return
         }
@@ -59,6 +68,18 @@ class ConfirmInterfaceController: WKInterfaceController {
     }
     
     @IBAction func onConfirmTapepd() {
+        
+        let x = WKExtension.sharedExtension().delegate as? ExtensionDelegate
+        
+        if isGoal {
+            if teamName == "FCB" {
+                x!.homeScore++
+            } else {
+                x!.awayScore++
+            }
+        }
+
+        
         self.popToRootController()
     }
 }

@@ -16,6 +16,7 @@ class ActionInterfaceController: WKInterfaceController {
     @IBOutlet var playerLabel: WKInterfaceLabel!
     
     var titleText: String = ""
+    var teamName: String = ""
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -24,6 +25,7 @@ class ActionInterfaceController: WKInterfaceController {
             playerLabel.setText("- \(name[0])")
             teamLabel.setText(name[1])
             
+            teamName = "\(name[1])"
             titleText = "\(name[1]) - \(name[0])"
         }
     }
@@ -40,16 +42,16 @@ class ActionInterfaceController: WKInterfaceController {
 
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
         if segueIdentifier == "goalAction" {
-            return ["0",titleText]
+            return ["0",titleText,teamName]
         }
         else if segueIdentifier == "yellowAction" {
-            return ["1",titleText]
+            return ["1",titleText,teamName]
         }
         else if segueIdentifier == "redAction" {
-            return ["2",titleText]
+            return ["2",titleText,teamName]
         }
         else {
-            return ["3",titleText]
+            return ["3",titleText,teamName]
         }
     }
 }

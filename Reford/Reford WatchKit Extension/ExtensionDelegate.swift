@@ -10,7 +10,8 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
-    var isMatchStarted: Bool = false
+    var homeScore: Int = 0
+    var awayScore: Int = 0
     
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
