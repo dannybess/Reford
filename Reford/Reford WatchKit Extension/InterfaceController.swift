@@ -77,7 +77,6 @@ class InterfaceController: WKInterfaceController {
         
         animateWithDuration(animationTime) { () -> Void in
             self.startMatchGroup.setRelativeHeight(0, withAdjustment: 0)
-//            self.startMatchGroup.setHidden(true)
             
             self.matchGroup.setRelativeHeight(1, withAdjustment: 0)
             self.matchGroup.setHidden(false)
@@ -92,6 +91,27 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    @IBAction func onStopMatchTapped() {
+        isMatchStarted = false
+        
+        let animationTime: NSTimeInterval = 1.0
+        
+        animateWithDuration(animationTime) { () -> Void in
+            self.startMatchGroup.setRelativeHeight(1, withAdjustment: 0)
+            
+            self.matchGroup.setRelativeHeight(0, withAdjustment: 0)
+        }
+        
+        self.startMatchGroup.setHidden(false)
+        
+        let x = WKExtension.sharedExtension().delegate as? ExtensionDelegate
+        
+        x!.homeScore = 0
+        x!.awayScore = 0
+        homeGoal.setText("\(x!.homeScore)")
+        awayGoal.setText("\(x!.awayScore)")
+        
+    }
     
 }
 

@@ -165,6 +165,16 @@
                             </variation>
                         </group>
                     </items>
+                    <menu key="menu" id="xmP-6m-ve8">
+                        <items>
+                            <menuItem title="Stop Match" icon="decline" id="IkR-Cw-giC">
+                                <connections>
+                                    <action selector="onStopMatchTapped" destination="AgC-eL-Hgc" id="9UF-XU-QrW"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Resume" icon="resume" id="O0k-Gt-JB8"/>
+                        </items>
+                    </menu>
                     <variation key="default">
                         <mask key="items">
                             <exclude reference="J7j-ni-32C"/>
