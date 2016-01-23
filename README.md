@@ -1,2 +1,2 @@
 # Reford
-hackathon thing
+http://devpost.com/software/reford
